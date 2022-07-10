@@ -11,12 +11,13 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name="temporarybasket")
-public class TemporaryBasket {
-
+@Table(name="orderdetails")
+public class OrderDetail {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int id;
+
+	public int orderId;
 	@Column(name="name", length = 150)
 	public String name;
 	@Column(name="images", length = 30)
@@ -29,7 +30,6 @@ public class TemporaryBasket {
 	public float discountPrice;
 	@Column(name="piece")
 	public int piece;
-	@Column(name="cookiesBasketID")
-	public int CookiesBasketId;
-	
+	@Column(name="productID")
+	public int productId;
 }

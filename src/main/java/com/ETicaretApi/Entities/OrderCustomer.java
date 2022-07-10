@@ -11,13 +11,13 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name="orderCustomers")
+@Table(name="ordercustomers")
 public class OrderCustomer {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int id;
-	@Column(name="orderID")
+	
 	public int orderId;
 	@Column(name="customerName", length = 50)
 	public String customerName;

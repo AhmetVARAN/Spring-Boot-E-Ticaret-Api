@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -41,10 +42,10 @@ public class Order {
 	public int customerId;
 	@Column(name="paymentType")
 	public String paymentType;	//credit cart, cash etc
-	@ManyToOne
+	@OneToMany
 	@JoinColumn(name="orderId", insertable = true)
 	public List<OrderCustomer> orderCustomers;
-	@ManyToOne
+	@OneToMany
 	@JoinColumn(name="orderId",insertable = true)
-	public List<OrderDeatil> orderDeatils;
+	public List<OrderDetail> orderDetails;
 }
