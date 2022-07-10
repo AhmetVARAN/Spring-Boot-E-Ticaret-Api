@@ -8,6 +8,6 @@ import com.ETicaretApi.Entities.TemporaryBasket;
 
 public interface TemporaryBasketRepository extends JpaRepository<TemporaryBasket, Integer> {
 
-	@Query("SELECT * FROM temporaryBasket WHERE cookieBasketId = :cookieId")
+	@Query(value="SELECT * FROM temporaryBasket WHERE cookieBasketId = :cookieId LIMIT 1",nativeQuery = true)
 	public boolean BasketCookieControl(@Param("cookieId") int dookieId);
 }

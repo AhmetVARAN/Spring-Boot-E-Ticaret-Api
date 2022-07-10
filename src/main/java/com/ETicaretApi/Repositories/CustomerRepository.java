@@ -16,7 +16,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
 	
 	//eğer repository içindeki metodlar dışında sorgulama yapılacaksa bu interface içine yeni soyut metodlar tanımlanır
 
-	@Query("SELECT * FROM Customers Where email = :email AND password = :password")
+	@Query(value="SELECT * FROM Customers Where email = :email AND password = :password LIMIT 1", nativeQuery = true)
 	public Customer login(@Param("email")String email, @Param("password")String password);
 
 
