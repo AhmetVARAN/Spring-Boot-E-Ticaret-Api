@@ -11,25 +11,25 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name="TemporaryBasket")
+@Table(name="temporaryBasket")
 public class TemporaryBasket {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int id;
-	@Column(name="Name", length = 150)
+	@Column(name="name", length = 150)
 	public String name;
-	@Column(name="Images", length = 30)
+	@Column(name="images", length = 30)
 	public String images;
-	@Column(name="Explanations", length = 150)
+	@Column(name="explanations", length = 150)
 	public String explanation;
-	@Column(name="Price")
+	@Column(name="price")
 	public float price;
-	@Column(name="DiscountPrice")
+	@Column(name="discountPrice")
 	public float discountPrice;
-	@Column(name="Piece")
+	@Column(name="piece")
 	public int piece;
-	@Column(name="CookiesBasketID")
+	@Column(name="cookiesBasketID")
 	public int CookiesBasketId;
 	
 }

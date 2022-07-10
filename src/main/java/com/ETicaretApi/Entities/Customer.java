@@ -11,23 +11,23 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name="Customers")
+@Table(name="customers")
 public class Customer {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int id;
-	@Column(name="Name", length = 30)
+	@Column(name="name", length = 30)
 	public String name;
-	@Column(name="Surname", length = 30)
+	@Column(name="surname", length = 30)
 	public String surname;
-	@Column(name="Email", length = 50)
+	@Column(name="email", length = 50)
 	public String email;
-	@Column(name="Password", length = 20)
+	@Column(name="password", length = 20)
 	public String password;
-	@Column(name="Phone", length = 20)
+	@Column(name="phone", length = 20)
 	public String phone;
-	@Column(name="Status")
+	@Column(name="status")
 	public boolean status;
 	
 }

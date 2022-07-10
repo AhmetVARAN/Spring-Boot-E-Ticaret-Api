@@ -11,33 +11,32 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name="Products")
+@Table(name="products")
 public class Product {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int id;
-	@Column(name="Name", length = 150)
+	@Column(name="name", length = 150)
 	public String name;
-	@Column(name="Images", length = 30)
+	@Column(name="images", length = 30)
 	public String images;
-	@Column(name="Explanations", length = 150)
+	@Column(name="explanations", length = 150)
 	public String explanation;
-	@Column(name="Price")
+	@Column(name="price")
 	public float price;
-	@Column(name="DiscountPrice")
+	@Column(name="discountPrice")
 	public float discountPrice;
-	@Column(name="Stock")
+	@Column(name="stock")
 	public int stock;
-	@Column(name="Status")
+	@Column(name="status")
 	public boolean status;
-	@Column(name="CategoryID")
+	@Column(name="categoryID")
 	public int categoryId;
 	
 	/* SEO için gerekli olanlar */
-	@Column(name="Keyword", length = 160)
-	public String keyword;	//googleda aratıldığında öne çıkarılacak kelimeler
-	
-	@Column(name="Description", length = 160)
+	@Column(name="keyword", length = 160)
+	public String keyword;	//googleda aratıldığında öne çıkarılacak kelimeler	
+	@Column(name="description", length = 160)
 	public String description;	//ürünün kısa açıklaması
 }

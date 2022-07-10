@@ -1,12 +1,15 @@
 package com.ETicaretApi.Entities;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -15,28 +18,33 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name="Orders")
+@Table(name="orders")
 public class Order {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	public int id;
-	@Column(name="OrderStatus", length = 30)	//on cargo, waiting etc
+	@Column(name="orderStatus", length = 30)	//on cargo, waiting etc
 	public String orderStatus;
-	@Column(name="CargoNumber", length = 30)
+	@Column(name="cargoNumber", length = 30)
 	public String cargoNumber;
 
-	@Column(name="TotalPrice")
+	@Column(name="totalPrice")
 	public float totalPrice;
-	@Column(name="TotalDiscountPrice")
+	@Column(name="totalDiscountPrice")
 	public float totalDiscountPrice;
 	@Column(name="KDV")
 	public float KDV;
 	@Temporal(TemporalType.DATE)
 	public Date orderDate;
-	@Column(name="CustomerID")
+	@Column(name="customerID")
 	public int customerId;
-	@Column(name="PaymentType")
+	@Column(name="paymentType")
 	public String paymentType;	//credit cart, cash etc
-	
+	@ManyToOne
+	@JoinColumn(name="orderId", insertable = true)
+	public List<OrderCustomer> orderCustomers;
+	@ManyToOne
+	@JoinColumn(name="orderId",insertable = true)
+	public List<OrderDeatil> orderDeatils;
 }

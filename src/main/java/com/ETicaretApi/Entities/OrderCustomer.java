@@ -11,21 +11,23 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name="OrderCustomers")
+@Table(name="orderCustomers")
 public class OrderCustomer {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int id;
-	@Column(name="AddressName", length = 50)
-	public String addressName;
-	@Column(name="City", length = 50)
+	@Column(name="orderID")
+	public int orderId;
+	@Column(name="customerName", length = 50)
+	public String customerName;
+	@Column(name="city", length = 50)
 	public String city;
-	@Column(name="Distrinct", length = 50)
+	@Column(name="distrinct", length = 50)
 	public String distrinct;
-	@Column(name="FullAdress", length = 350)
+	@Column(name="fullAdress", length = 350)
 	public String fullAddress;
-	@Column(name="Phone", length = 20)
+	@Column(name="phone", length = 20)
 	public String phone;
 	
 	public boolean status;	//True->teslim edildi, False->teslim edilmedi
