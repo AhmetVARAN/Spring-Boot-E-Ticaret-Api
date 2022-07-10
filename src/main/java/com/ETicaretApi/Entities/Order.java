@@ -9,7 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -29,7 +28,6 @@ public class Order {
 	public String orderStatus;
 	@Column(name="cargoNumber", length = 30)
 	public String cargoNumber;
-
 	@Column(name="totalPrice")
 	public float totalPrice;
 	@Column(name="totalDiscountPrice")
