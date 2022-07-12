@@ -12,37 +12,39 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ETicaretApi.Entities.Category;
-import com.ETicaretApi.Services.CategoryService;
-
+import com.ETicaretApi.Entities.Customer;
+import com.ETicaretApi.Services.CustomerService;
 
 @RestController
 @RequestMapping("api")
-public class CategoryController {
-
+public class CustomerController {
 	@Autowired
-	private CategoryService service;
+	private CustomerService service;
 	
-	@GetMapping("/category")
-	public List<Category> getAllCategory(){
+	@GetMapping("/customers")
+	public List<Customer> getAllCustomer(){
 		return service.getAll();
 	}
 	
-	@PostMapping("/category")
-	public String createCategory(@RequestBody Category category){
-		return service.add(category);
+	@PostMapping("/customers")
+	public String createCustomer(@RequestBody Customer customer){
+		return service.add(customer);
 	}
 	
-	@PutMapping("/category")
-	public String updateCategory(@RequestBody Category category){
-		return service.update(category);
+	@PutMapping("/customers")
+	public String updateCustomer(@RequestBody Customer customer){
+		return service.update(customer);
 	}
 	
-	@DeleteMapping("/category/{id}")
-	public String deleteCategory(@PathVariable int id){
+	@DeleteMapping("/customers/{id}")
+	public String deleteCustomer(@PathVariable int id){
 		return service.delete(id);
 	}
 	
-
+	@PostMapping("/customers/login")
+	public Customer login(String email, String password){
+		return service.login(email,password);
+	}
+	
 	
 }

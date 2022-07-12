@@ -9,7 +9,7 @@ public interface IOrderService {
 	
 	public String add(Order data);
 	
-	public List<Order> getAll(int cookieId);
+	public List<Order> getAll();
 	
 	public Order getById(int id);
 	

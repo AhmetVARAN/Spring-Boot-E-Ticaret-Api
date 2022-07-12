@@ -14,7 +14,6 @@ public interface ITemporaryBasket {
 	
 	public String delete(int id);
 	
-	public String update(TemporaryBasket data);
+	public String update(int basketId,boolean status);
 	
-	public boolean cookieControl(int cookieId);
 }

@@ -5,33 +5,33 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ETicaretApi.Entities.Category;
-import com.ETicaretApi.IService.ICategoryService;
-import com.ETicaretApi.Repositories.CategoryRepository;
-
+import com.ETicaretApi.Entities.Product;
+import com.ETicaretApi.IService.IProductService;
+import com.ETicaretApi.Repositories.ProductRepository;
 @Service
-public class CategoryService implements ICategoryService {
+public class ProductService implements IProductService{
 
 	@Autowired
-	private CategoryRepository repo;
+	private ProductRepository repo;
 	
 	@Override
-	public String add(Category data) {
+	public String add(Product data) {
 		try {
 			repo.save(data);
 			return "Success";
 		} catch (Exception e) {
 			return e.getMessage();
 		}
+	
 	}
 
 	@Override
-	public List<Category> getAll() {
+	public List<Product> getAll() {
 		return repo.findAll();
 	}
 
 	@Override
-	public Category getById(int id) {
+	public Product getById(int id) {
 		return repo.findById(id).orElse(null);
 	}
 
@@ -46,12 +46,13 @@ public class CategoryService implements ICategoryService {
 	}
 
 	@Override
-	public String update(Category data) {
+	public String update(Product data) {
 		try {
 			repo.save(data);
 			return "Success";
 		} catch (Exception e) {
 			return e.getMessage();
 		}
-	}	
+	}
+
 }

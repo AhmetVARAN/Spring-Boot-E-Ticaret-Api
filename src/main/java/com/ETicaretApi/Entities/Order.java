@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -36,7 +37,7 @@ public class Order {
 	public float KDV;
 	@Temporal(TemporalType.DATE)
 	public Date orderDate;
-	@Column(name="customerID")
+	@Column(name="customerId")
 	public int customerId;
 	@Column(name="paymentType")
 	public String paymentType;	//credit cart, cash etc
@@ -46,4 +47,9 @@ public class Order {
 	@OneToMany
 	@JoinColumn(name="orderId",insertable = true)
 	public List<OrderDetail> orderDetails;
+	
+	
+	@ManyToOne
+	@JoinColumn(name="customerId",insertable = false, updatable=false)
+	public Customer customers;
 }

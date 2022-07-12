@@ -1,5 +1,6 @@
 package com.ETicaretApi.Repositories;
 
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -19,5 +20,6 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
 	@Query(value="SELECT * FROM Customers Where email = :email AND password = :password LIMIT 1", nativeQuery = true)
 	public Customer login(@Param("email")String email, @Param("password")String password);
 
-
+	@Query(value="SELECT * FROM Customers Where email = :email AND phone = :phone LIMIT 1", nativeQuery = true)
+	public Customer CustomerController(@Param("email") String email, @Param("phone") String phone); 
 }

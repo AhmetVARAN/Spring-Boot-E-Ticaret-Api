@@ -17,6 +17,8 @@ public class TemporaryBasket {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int id;
+	@Column(name="productId")
+	public int productId; 
 	@Column(name="name", length = 150)
 	public String name;
 	@Column(name="images", length = 30)
