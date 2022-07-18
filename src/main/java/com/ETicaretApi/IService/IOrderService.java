@@ -8,7 +8,7 @@ import com.ETicaretApi.Entities.Order;
 public interface IOrderService {
 	
 	public String add(Order data);
-	
+	public List<Order> customerGetAll(int customerId);
 	public List<Order> getAll();
 	
 	public Order getById(int id);

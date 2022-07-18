@@ -1,5 +1,6 @@
 package com.ETicaretApi.Services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +38,20 @@ public class OrderService implements IOrderService {
 	}
 
 	@Override
+	public List<Order> customerGetAll(int customerId) {
+		List<Order> datas = new ArrayList<Order>();
+		
+		for (Order order : repo.findAll()) {
+			if(order.customerId == customerId ) {
+				datas.add(order);
+			}
+		}
+		return datas;
+	}
+	
+	@Override
 	public List<Order> getAll() {
+		
 		return repo.findAll();
 	}
 

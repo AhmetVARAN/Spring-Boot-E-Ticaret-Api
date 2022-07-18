@@ -65,7 +65,7 @@ public class TemporaryBasketService implements ITemporaryBasket{
 	
 		try {
 			if(dataControl != null) {
-				Product stockProduct= productRepo.findById(dataControl.productId).orElse(null);
+				Product stockProduct = productRepo.findById(dataControl.productId).orElse(null);
 				if(status) {	//increase unit				
 					if(stockProduct.stock > dataControl.piece) {		//ürünün depodaki stok durumu kontrolü
 						dataControl.piece++;	//depodaki ürün, alınmak istenen yüksekse arttır
